@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+
 import { StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
-import CurrencyFormat from 'react-currency-format';
+
 
 function Product({ category, description, image, price, title, rating }) {
     let ratings = Array(Math.floor(rating.rate)).fill()
