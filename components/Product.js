@@ -6,7 +6,7 @@ import Image from 'next/image'
 function Product({ category, description, image, price, title, rating }) {
     let ratings = Array(Math.floor(rating.rate)).fill()
     return (
-        <div className='relative flex flex-col m-5 bg-white p-10 z-30'>
+        <div className='relative flex flex-col items-center m-5 bg-white p-10 z-30'>
             <p className=' absolute top-2 right-2 text-xs italic text-gray-400'>
                 {category}
             </p>
