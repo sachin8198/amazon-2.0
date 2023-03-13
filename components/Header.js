@@ -7,8 +7,8 @@ function Header() {
             {/* top nav */}
             <div className="bg-amazon_blue flex items-center p-1 py-2 flex-grow px-4 space-x-5" >
                 <div className=" mt-1 flex items-center flex-grow sm:flex-grow-0">
-                    <Image src="https://links.papareact.com/f90" width={150} height={40} alt="icon"
-                        className=" cursor-pointer"
+                    <img src="https://links.papareact.com/f90" alt="icon"
+                        className=" w-32 h-10 cursor-pointer"
                     />
                 </div>
                 {/* Search */}
