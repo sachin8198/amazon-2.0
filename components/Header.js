@@ -1,14 +1,15 @@
-import Image from "next/image"
 import { MenuIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/react/outline'
+import { signIn, signOut, useSession } from "next-auth/react"
 
 function Header() {
+    const session = useSession()
     return (
         <header>
             {/* top nav */}
             <div className="bg-amazon_blue flex items-center p-1 py-2 flex-grow px-4 space-x-5" >
                 <div className=" mt-1 flex items-center flex-grow sm:flex-grow-0">
                     <img src="https://links.papareact.com/f90" alt="icon"
-                        className=" w-32 h-10 cursor-pointer"
+                        className=" w-32 cursor-pointer"
                     />
                 </div>
                 {/* Search */}
@@ -20,8 +21,8 @@ function Header() {
                 {/* Right */}
 
                 <div className=" text-white flex items-center text-xs space-x-6">
-                    <div className=" cursor-pointer hover:underline">
-                        <p>Hello Sachin</p>
+                    <div onClick={session.data ? signOut : signIn} className=" cursor-pointer hover:underline">
+                        <p>{session.data ? `Hello, ${session?.data?.user?.name}` : "Sign In"}</p>
                         <p className=" font-extrabold md:text-sm">Accoun & Lists</p>
                     </div>
 
